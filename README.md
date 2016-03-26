@@ -1,0 +1,1 @@
+This script takes in a JSON file of company symbols and retrieves the corresponding stock prices as a CSV.
