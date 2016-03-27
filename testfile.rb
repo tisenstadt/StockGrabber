@@ -33,8 +33,7 @@ end
 
 class TestStockPriceRetriever < Minitest::Test
   def setup
-   @stockpriceretriever = StockPriceRetriever.new
-   
+    @stockpriceretriever = StockPriceRetriever.new
   end
   
   
