@@ -34,7 +34,7 @@ class StockPriceRetriever
         csv << company
       end
     end    
-	end 
+  end 
 end
 
 
