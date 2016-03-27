@@ -1,21 +1,17 @@
-require './parser.rb'
-require './retriever.rb'
-
+require_relative 'companystocks.rb'
+require_relative 'stockpriceretriever.rb'
 
 class Engine
-  attr_accessor :parser, :retriever
-  def initialize(parser, retriever)
-    @parser = parser
-    @retriever = retriever
+  attr_accessor :companystocks, :stockprices
+  def initialize(companystocks, stockpriceretriever)
+    @companystocks = companystocks
+    @stockprices = stockpriceretriever
   end
   
   def run_program
-    symbols = parser.retrieve_array_of_symbols
-    retriever.controller(symbols)
+    symbols = companystocks.get_symbols
+    stockprices.find_and_save_prices(symbols)
   end
 end
 
 
-parser = Parser.new('companies.json')
-retriever = Retriever.new
-stocks = Engine.new(parser, retriever).run_program
